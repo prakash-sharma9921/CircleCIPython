@@ -17,7 +17,6 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          # This assumes pytest is installed via the install-package step above
           command: |
-            sudo pip install pipenv
-            pipenv install
+            py --version
+            
