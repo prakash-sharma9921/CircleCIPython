@@ -18,4 +18,6 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: echo "Hello World"
+          command: |
+            sudo pip install pipenv
+            pipenv install
