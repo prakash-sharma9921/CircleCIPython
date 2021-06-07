@@ -15,6 +15,7 @@ jobs:
       - image: circleci/python:3.9.5
     steps:
       - checkout
+      - python/dist
       - run:
           name: Run tests
           command: |
