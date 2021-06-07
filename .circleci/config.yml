@@ -18,5 +18,6 @@ jobs:
       - run:
           name: Run tests
           command: |
-            sudo py --version
+            sudo pip install pipenv
+            pipenv install
             
