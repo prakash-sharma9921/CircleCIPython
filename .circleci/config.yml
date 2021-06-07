@@ -10,15 +10,15 @@ workflows:
 
 
 jobs:
-  build-and-test:
-    working_directory: C:\Users\Vikas\AppData\Local\Programs\Python\Python39
+  build-and-test:    
     docker:
       - image: circleci/python:3.9.5
     steps:
       - checkout
+      - python/install-packages:
+          pkg-manager: pip
       - run:
           name: Run tests
           command: |
-            sudo pip install pipenv
-            pipenv install
+            pip install twine && twine upload
             
