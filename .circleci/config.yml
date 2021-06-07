@@ -11,7 +11,7 @@ workflows:
 
 jobs:
   build-and-test:
-    working-directory: C:\Users\Vikas\AppData\Local\Programs\Python\Python39
+    working_directory: C:\Users\Vikas\AppData\Local\Programs\Python\Python39
     docker:
       - image: circleci/python:3.9.5
     steps:
