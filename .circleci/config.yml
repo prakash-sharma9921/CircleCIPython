@@ -1,16 +1,22 @@
-jobs:
-  build:
-    executor: python/default
-    steps:
-      - checkout      
-      - run:
-          command: |
-            pytest --version
-          name: Test
-orbs:
-  python: circleci/python@1.1.0
 version: 2.1
+
+orbs:
+  python: circleci/python@1.2
+
 workflows:
-  main:
+  sample:
     jobs:
-      - build
+      - build-and-test
+
+
+jobs:
+  build-and-test:    
+    docker:
+      - image: circleci/python:3.9.5
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: |
+            pip list
+            
